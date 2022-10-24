@@ -1,3 +1,4 @@
+import React from "react";
 import Cookies from "js-cookie";
 import { useRouter } from "next/router";
 import Link from "next/link";
@@ -5,10 +6,11 @@ import Link from "next/link";
 export default function Home() {
   const router = useRouter();
 
-  const logIn = (e) => {
+  const logIn = (e : any) => {
     e.preventDefault();
     Cookies.set("loggedin", "true");
-    router.push("/dashboard");
+    // router.push("/dashboard");
+    router.replace("/dashboard");
   };
   
   return (
